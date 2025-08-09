@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shark Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="./logo.jpg" alt="Shark Logo" class="logo">
+
+    <div class="container">
+        <h2>Join the Shark Crew</h2>
+        <form id="registrationForm" action="./home.html">
+            <input type="text" id="fullname" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+
+            <!-- Phone number field -->
+            <input type="tel" id="phone" placeholder="Phone Number" pattern="[0-9]{10}" 
+                   title="Enter a 10-digit phone number" required>
+
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+
+            <p class="error" id="passwordError">
+                Password must have at least one capital letter, one number, and one symbol.
+            </p>
+            <p class="error" id="confirmError">Passwords do not match.</p>
+
+            <div class="terms">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">I accept the terms and conditions</label>
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+         <p class="login-text">
+            Already have an account? <a href="./login.html">Login</a>
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const phone = document.getElementById('phone').value;
+            const passwordError = document.getElementById('passwordError');
+            const confirmError = document.getElementById('confirmError');
+            const passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).+$/;
+            const phonePattern = /^[0-9]{10}$/;
+
+            let valid = true;
+
+            // Password validation
+            if (!passwordPattern.test(password)) {
+                passwordError.style.display = 'block';
+                valid = false;
+            } else {
+                passwordError.style.display = 'none';
+            }
+
+            // Confirm password validation
+            if (password !== confirmPassword) {
+                confirmError.style.display = 'block';
+                valid = false;
+            } else {
+                confirmError.style.display = 'none';
+            }
+
+            // Phone validation
+            if (!phonePattern.test(phone)) {
+                alert("Please enter a valid 10-digit phone number.");
+                valid = false;
+            }
+
+            if (!valid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

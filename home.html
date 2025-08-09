@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shark Crew - Home</title>
+  <link rel="stylesheet" href="./home.css" />
+  <style>
+    /* Added styles for About Us and Contact Us sections */
+    main.store-selection {
+      margin-bottom: 50px;
+    }
+
+    section.about-us, section.contact-us {
+      max-width: 900px;
+      margin: 0 auto 50px auto;
+      padding: 30px 20px;
+      background: #f5f8fb;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    }
+
+    section.about-us h2,
+    section.contact-us h2 {
+      color: #183545;
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+
+    section.about-us p,
+    section.contact-us p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    /* Contact form styling */
+    form.contact-form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form.contact-form label {
+      margin: 12px 0 6px;
+      font-weight: 600;
+      color: #183545;
+    }
+
+    form.contact-form input,
+    form.contact-form textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+    }
+
+    form.contact-form input:focus,
+    form.contact-form textarea:focus {
+      border-color: #183545;
+      outline: none;
+    }
+
+    form.contact-form button {
+      margin-top: 20px;
+      padding: 14px;
+      background-color: #183545;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form.contact-form button:hover {
+      background-color: #183545;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo-container">
+        <img src="logo.jpg" alt="Shark Logo" class="nav-logo" />
+        <h1>Shark Crew</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="./fashion.html">Products</a></li>
+        <li><a href="#about-us">About Us</a></li>
+        <li><a href="#contact-us">Contact Us</a></li>
+      </ul>
+      <div class="search-box">
+        <input type="text" placeholder="Search..." />
+        <button>🔍</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="store-selection">
+    <h2>Choose Your Store</h2>
+    <div class="store-container">
+      <!-- Fashion Store -->
+      <a href="fashion.html" class="store-card">
+        <img src="./fashion.jpg" alt="Fashion Store" />
+        <h3>👗 Fashion Store</h3>
+        <p class="brand-name">VogueVibe</p>
+      </a>
+    </div>
+  </main>
+
+  <!-- About Us Section -->
+  <section class="about-us" id="about-us">
+    <h2>About Us</h2>
+    <p>
+      Shark Crew is dedicated to bringing you the best fashion and lifestyle products. Founded in 2015, we’ve grown into a trusted brand known for quality, style, and customer satisfaction.
+    </p>
+    <p>
+      Our mission is to empower you with trendy and affordable products while providing exceptional service. We value integrity, innovation, and community in everything we do.
+    </p>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section class="contact-us" id="contact-us">
+    <h2>Contact Us</h2>
+    <form class="contact-form" action="#" method="post">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+</body>
+</html>
