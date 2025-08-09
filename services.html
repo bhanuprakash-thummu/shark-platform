@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Services - Branding and Application Platform</title>
+    <link rel="stylesheet" href="services.css">
+</head>
+<body>
+
+    <header>
+        <h1>Apply for Services</h1>
+        <p>Get started by filling out the form below and our team will contact you shortly.</p>
+    </header>
+
+    <!-- Shark image -->
+    <a href="./homepage.html"><img src="./shark.png" alt="Shark Logo" class="top-right-img"></a>
+
+    <section class="form-section">
+        <form action="#" method="post">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="service">Select Service:</label>
+            <select id="service" name="service" required>
+                <option value="">-- Choose a Service --</option>
+                <option value="branding">Branding Consultation</option>
+                <option value="marketing">Marketing Campaign</option>
+                <option value="design">Custom Design</option>
+                <option value="partnership">Business Partnership</option>
+            </select>
+
+            <label for="message">Additional Details:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us more about your needs"></textarea>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showcase Your Brand</title>
+    <link rel="stylesheet" href="./showcase.css">
+</head>
+<body>
+
+    <div class="container">
+        <img src="./shark.png" alt="sharkimage" width="25%">
+        <p class="intro">
+            Welcome to our <b>Shark</b> — the place where your business can shine. 
+            Present your brand identity, highlight your products or services, and connect 
+            with potential clients and partners.
+        </p>
+
+        <form class="brand-form" id="brandForm">
+            <label for="brandName">Brand Name:</label>
+            <input type="text" id="brandName" name="brandName" placeholder="Enter your brand name" required>
+
+            <label for="tagline">Tagline:</label>
+            <input type="text" id="tagline" name="tagline" placeholder="Your brand's tagline">
+
+            <label for="brandStory">Brand Story:</label>
+            <textarea id="brandStory" name="brandStory" rows="4" placeholder="Share your mission, vision, and values"></textarea>
+
+            <label for="logoUpload">Upload Logo:</label>
+            <input type="file" id="logoUpload" name="logoUpload" accept="image/*">
+
+            <label for="galleryUpload">Upload Product/Service Images:</label>
+            <input type="file" id="galleryUpload" name="galleryUpload" accept="image/*" multiple>
+
+            <label for="marketingUpload">Upload Marketing Materials (PDF, PPT, etc.):</label>
+            <input type="file" id="marketingUpload" name="marketingUpload" accept=".pdf,.ppt,.pptx">
+
+            <label for="contact">Contact Details:</label>
+            <input type="text" id="contact" name="contact" placeholder="Email / Phone / Website">
+
+            <a href="./ho"></a><button type="submit">Publish My Brand</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("brandForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let brandData = {
+                name: document.getElementById("brandName").value,
+                tagline: document.getElementById("tagline").value,
+                story: document.getElementById("brandStory").value,
+                contact: document.getElementById("contact").value
+            };
+
+            // Save text fields
+            localStorage.setItem("brandData", JSON.stringify(brandData));
+
+            // Save logo
+            const logoFile = document.getElementById("logoUpload").files[0];
+            if (logoFile) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    localStorage.setItem("logoData", e.target.result);
+                };
+                reader.readAsDataURL(logoFile);
+            }
+
+            // Save gallery images
+            const galleryFiles = document.getElementById("galleryUpload").files;
+            if (galleryFiles.length > 0) {
+                let galleryArray = [];
+                let filesRead = 0;
+                for (let file of galleryFiles) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        galleryArray.push(e.target.result);
+                        filesRead++;
+                        if (filesRead === galleryFiles.length) {
+                            localStorage.setItem("galleryData", JSON.stringify(galleryArray));
+                        }
+                    };
+                    reader.readAsDataURL(file);
+                }
+            }
+
+            // Save marketing materials
+            const marketingFile = document.getElementById("marketingUpload").files[0];
+            if (marketingFile) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    localStorage.setItem("marketingData", e.target.result);
+                };
+                reader.readAsDataURL(marketingFile);
+            }
+
+            // Delay to ensure files are saved before redirect
+            setTimeout(() => {
+                window.location.href = "display.html";
+            }, 500);
+        });
+    </script>
+
+</body>
+</html>

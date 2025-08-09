@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Display</title>
+    <link rel="stylesheet" href="./display.css">
+</head>
+<body>
+    <a href="./homepage.html" class="back">Back to Homepage</a>
+    <h1>Your Brand Showcase</h1>
+    <div id="brandContent"></div>
+
+    <script>
+        const brandData = JSON.parse(localStorage.getItem("brandData"));
+        const logoData = localStorage.getItem("logoData");
+        const galleryData = JSON.parse(localStorage.getItem("galleryData"));
+        const marketingData = localStorage.getItem("marketingData");
+
+        let output = `<h2>${brandData.name}</h2>`;
+        output += `<p><b>Tagline:</b> ${brandData.tagline}</p>`;
+        output += `<p><b>Story:</b> ${brandData.story}</p>`;
+        output += `<p><b>Contact:</b> ${brandData.contact}</p>`;
+
+        if (logoData) {
+            output += `<h3>Logo:</h3><img src="${logoData}" alt="Logo" width="150">`;
+        }
+
+        if (galleryData && galleryData.length > 0) {
+            output += `<h3>Gallery:</h3>`;
+            galleryData.forEach(img => {
+                output += `<img src="${img}" alt="Gallery Image" width="150" style="margin:5px;">`;
+            });
+        }
+
+        if (marketingData) {
+            output += `<h3>Marketing Material:</h3><a href="${marketingData}" download="marketing-file">Download</a>`;
+        }
+
+        document.getElementById("brandContent").innerHTML = output;
+    </script>
+</body>
+</html>

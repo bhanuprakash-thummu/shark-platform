@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fff2dd, #fff2dd);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container for left image and right content */
+        .homepage-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 40px;
+            gap: 80px; /* Increased gap between image and logins */
+        }
+
+        /* Left section */
+        .shark-section {
+            text-align: center;
+            max-width: 300px;
+        }
+
+        .shark-section img {
+            width: 100%;
+            max-width: 200px;
+            display: block;
+            margin: 0 auto 15px auto;
+        }
+
+        .shark-section p {
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.4;
+        }
+
+        /* Right section */
+        .homepage-wrapper {
+         flex: 1;
+        margin-left: 200px; /* Adds extra space between image and logins */
+        }
+
+
+        .homepage-title {
+            color: #f7971e;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .box-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-height: 60px; /* fixed height for title */
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .box h2 {
+            color: #f7971e;
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        /* Description outside the box */
+        .desc {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.4;
+            width: 250px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .homepage-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px; /* Smaller gap for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="homepage-container">
+        <!-- Left side: Shark image + paragraph -->
+        <div class="shark-section">
+            <img src="./shark.png" alt="sharkimg">
+            <p>
+                Welcome to our <b>Shark</b> — the place where your business can shine. 
+                Present your brand identity, highlight your products or services, 
+                and connect with potential clients and partners.
+            </p>
+        </div>
+
+        <!-- Right side: Title + Boxes + Descriptions -->
+        <div class="homepage-wrapper">
+            <h1 class="homepage-title">Choose Login Type</h1>
+            <div class="box-container">
+                
+                <div>
+                    <div class="box">
+                        <a href="./login.html"><h2>Business Login</h2></a>
+                    </div>
+                    <p class="desc">
+                        Access your dedicated dashboard to manage and showcase your brand.  
+                        Upload marketing materials, track inquiries, and update services in real time.
+                    </p>
+                </div>
+
+                <div>
+                    <div class="box">
+                        <a href="./customerlogin.html"><h2>Customer Login</h2></a>
+                    </div>
+                    <p class="desc">
+                        Explore services tailored for you.  
+                        Track your requests, manage your profile, and stay updated with offers.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

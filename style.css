@@ -1,0 +1,94 @@
+/* Reset some defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fff2dd, #fff2dd); /* Soft light orange gradient */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form container */
+form {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 450px;
+}
+
+/* Main headings like Login */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #f7971e;
+}
+
+/* Section headings (labels) */
+h3, h4 {
+    text-align: left;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Input fields */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #f7971e; /* Light orange border */
+    box-shadow: 0 0 5px rgba(247, 151, 30, 0.5);
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #f7971e; /* Light orange */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #e28712; /* Slightly darker orange on hover */
+}
+
+/* Links */
+a {
+    color: #f7971e; /* Light orange */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Extra for homepage title */
+body h1:first-child {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+.logo {
+            max-width: 120px;
+            margin-bottom: 15px;
+            margin-left: 150px;
+        }
